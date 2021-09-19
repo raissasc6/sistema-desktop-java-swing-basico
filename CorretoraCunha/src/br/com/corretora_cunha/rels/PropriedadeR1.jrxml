@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5a070a68-4ec1-40f3-8180-458d69cd2cad">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="cod" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[
+select p.* from Propriedade p where p.id_prop=$P{cod}
+]]>
+	</queryString>
+	<field name="id_prop" class="java.lang.Integer"/>
+	<field name="nome_prop" class="java.lang.String"/>
+	<field name="estado_prop" class="java.lang.String"/>
+	<field name="cidade_prop" class="java.lang.String"/>
+	<field name="rua_prop" class="java.lang.String"/>
+	<field name="num_prop" class="java.lang.Integer"/>
+	<field name="data_prop" class="java.lang.String"/>
+	<field name="valor_prop" class="java.lang.Double"/>
+	<field name="situacao_prop" class="java.lang.String"/>
+	<field name="proprietario_prop" class="java.lang.String"/>
+	<field name="complemento_prop" class="java.lang.String"/>
+	<field name="matricula_prop" class="java.lang.String"/>
+	<field name="coordenada_prop" class="java.lang.String"/>
+	<field name="fonte_prop" class="java.lang.String"/>
+	<field name="benfeitoria_prop" class="java.lang.String"/>
+	<field name="area_prop" class="java.lang.Integer"/>
+	<field name="area_reserva_prop" class="java.lang.Integer"/>
+	<field name="tipo_prop" class="java.lang.String"/>
+	<field name="atividade_prop" class="java.lang.String"/>
+	<field name="pasta_prop" class="java.lang.String"/>
+	<field name="unidade_prop" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="140" height="79" uuid="a289b339-2a60-4846-8a0d-ba3904a36ce1"/>
+				<imageExpression><![CDATA["/home/raissa_sc6/Documents/ifsp/LP1/CorretoraCunha/src/br/com/corretora_cunha/imgs/logo1.JPG"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="201" y="26" width="304" height="35" forecolor="#003300" uuid="66cf16fc-5d91-4626-945c-f557e9673dce"/>
+				<box>
+					<pen lineColor="#336600"/>
+					<topPen lineColor="#336600"/>
+					<leftPen lineColor="#336600"/>
+					<bottomPen lineColor="#336600"/>
+					<rightPen lineColor="#336600"/>
+				</box>
+				<textElement>
+					<font fontName="Yu Gothic UI Light" size="20"/>
+				</textElement>
+				<text><![CDATA[Relatório de Propriedade]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="196" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="60" width="40" height="20" uuid="f4233bb2-ae71-4794-a8a6-ed60f5aed24a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Area:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="55" y="60" width="192" height="20" uuid="eb5b79d8-3443-418f-a05f-d973c3b459dc"/>
+				<textFieldExpression><![CDATA[$F{area_prop}+" "+$F{unidade_prop}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="269" y="60" width="53" height="20" uuid="edf15971-b95b-4b3e-989e-068312a1602f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reserva:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="323" y="60" width="234" height="20" uuid="4b8fd183-6c2a-4aff-9e3a-f5bd8992b1dc"/>
+				<textFieldExpression><![CDATA[$F{area_reserva_prop}+" "+$F{unidade_prop}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="80" width="40" height="20" uuid="0833e04c-58f2-4a60-931a-512844ea167b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="80" width="92" height="20" uuid="a3171d86-644f-4bd9-b367-d69abd591b4b"/>
+				<textFieldExpression><![CDATA[$F{nome_prop}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="100" width="40" height="20" uuid="3889b24f-202d-494d-b517-f7df4c1d8618"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="120" width="56" height="20" uuid="efd7babd-ee83-4a7f-afa0-45008d04e814"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Benfeitoria:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="100" width="92" height="20" uuid="de2c23a2-dd34-46b4-bd4b-11fb4f6ac6e2"/>
+				<textFieldExpression><![CDATA["R$"+$F{valor_prop}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="120" width="181" height="75" uuid="5f81f8a2-be56-4121-bb88-b95a3f99fdd2"/>
+				<textFieldExpression><![CDATA[$F{benfeitoria_prop}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="268" y="80" width="49" height="20" uuid="0c161cfd-2283-4850-8608-815c6a9fcf7c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cidade:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="317" y="80" width="238" height="20" uuid="8ad623b9-d9d8-485c-94d9-5e1e2d40fc37"/>
+				<textFieldExpression><![CDATA[$F{cidade_prop}+"-"+$F{estado_prop}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="269" y="100" width="64" height="20" uuid="50af8e91-7cd9-41cf-a537-e6adddb3832a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Matriculas:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="333" y="100" width="224" height="20" uuid="71abf933-10b7-49a9-88cc-9b6788ea99af"/>
+				<textFieldExpression><![CDATA[$F{matricula_prop}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="269" y="120" width="71" height="20" uuid="72b014c3-efb2-4c7e-928f-dd03457620f2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Complemento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="339" y="120" width="216" height="73" uuid="8a9ed7b5-f101-40ce-ac11-393ce839221f"/>
+				<textFieldExpression><![CDATA[$F{complemento_prop}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="195" width="555" height="1" uuid="b0b3da79-d13c-40fb-a58f-af9c9a521631"/>
+			</line>
+			<textField>
+				<reportElement x="2" y="0" width="555" height="60" uuid="3a31b80d-039c-4ffe-90fc-7c80bde81387"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["A PROPRIEDADE "+$F{nome_prop}+" LOCALIZADA EM "+ $F{cidade_prop}+" - "+
+$F{estado_prop}+" COM ÁREA TOTAL DE "+$F{area_prop}+" "+$F{unidade_prop}+
+" E RESERVA DE "+$F{area_reserva_prop}+" "+$F{unidade_prop}+
+". POSSUI "+$F{benfeitoria_prop}+ ". NO VALOR DE RS"+$F{valor_prop}+". "+ $F{complemento_prop}+"."]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="435" y="34" width="80" height="20" uuid="fcb2049d-09b7-40f0-98d9-b621883a8cac"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="34" width="40" height="20" uuid="c37846d0-882a-4d41-b606-d3ca8943b6a2"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="34" width="269" height="20" uuid="db453edc-659f-48e1-83d0-f7a28a3eb1ab"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
